@@ -1,0 +1,42 @@
+Source	Name	CRON(UTC)	Occurrence	Runtime
+Skyvia	1 - MAIN PROVIDER SYNC	* * * * *	Every Minute	1
+Skyvia	1.1 - PROVIDER SYNC - HARD SF DELETES	13 5 * * 2-6	M-F 2113	1
+Skyvia	2 - Low Priority Syncs (Directory, tags, ratings)	0 * * * *	Every Hour	1
+Skyvia	3 - Pricing	27 16 * * 1,4	M/R 0827	240
+Skyvia	4 - ULD Sync	14 17 * * *	0914	1
+Skyvia	4 - ULD sync - OLD	14 17 * * * 	0914	1
+Skyvia	5 - Directory Updates (Pricing)	20 17 * * 1,4	M/R 0920	3
+Skyvia	5.1 - Directory Updates (Page value)	50 8 * * 1,4	M/R 0050	8
+Skyvia	5.1 - Directory Updates (Page Value) - New	40 16 * * 1,4	M/R 0840	3
+Skyvia	6 - Daily Tag Sync	49 4 * * *	2049	3
+Skyvia	7 - Tag & Attorney listing deletions	59 4 * * 1-5	M-F 2059	1
+Skyvia	8 - Feedback to Case Sync	0 * * * *	Every Hour	1
+Skyvia	9 - Metro/Vertical - DB > SF	0 8,20 * * *	*/12	1
+Skyvia	ON HOLD - Provider Metrics Upload	48 14 * * 1,4	M/R 0648	20
+Stitch	stitch_ga	0 6 * * *	2200	6
+Stitch	stitch_intercom	0 7 * * *	2300	10
+Stitch	stitch_recurly	0 * * * *	Every Hour	60
+Stitch	stitch_salesforce	0 * * * *	Every Hour	9
+Stitch	stitch_stripe	*/30 * * * * 	Every 30 minutes	2
+ubuntu@dw	dbt run	0 11 * * *		60
+root@dw	get_ahrefs_backlinks_from_api	0 4 * * *		30
+root@dw	run_google_analytics_events	30 4 * * *		30
+root@dw	run_google_analytics_traffic	45 4 * * *		30
+root@dw	get_semrush_organic_positions	30 5 * * *		30
+root@dw	update_view_directory_value	0 6 * * *		30
+root@dw	update_view_pricing_dashboard	30 6 * * *		30
+root@dw	update_view_ulds_for_salesforce	0 7 * * *		30
+root@dw	sync_databases	*/15 0-4,11-23 * * *		30
+root@dw	get_google_search_console_metrics	30 7 * * *		30
+root@dw	update_twilio_calls	0 8 * * *		30
+root@dw	update_twilio_alerts	5 * * * *		30
+root@dw	get_google_trends	0 0 1 * *		30
+root@dw	create_provider_metrics_csv	5 0 * * *		30
+root@dw	update_pricing_dashboard_history	30 8 * * *		30
+root@dw	refresh_materialized_views	0 9 * * *		30
+root@dw	update_semrush_value_snapshots	30 9 * * *		30
+root@dw	update_cf_audits_from_google_sheets	10 * * * *		30
+root@dw	update_twilio_numbers	0 3 * * 0		30
+root@dw	sync_production_databases	* * * * *		30
+root@dw	sync_int_directory	* * * * *		30
+root@dw	sync_int_provider	* * * * *		30
